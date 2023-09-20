@@ -40,7 +40,7 @@
           <span class="act"></span>
           <span>正在热映</span>
         </div>
-        <div class="head-size">19部 &gt;</div>
+        <div class="head-size" @click="$router.push('/theater')">19部 &gt;</div>
       </div>
       <div class="list-page">
         <div class="page" v-for="(item, index) in theater" :key="index">
@@ -57,7 +57,7 @@
           <span class="act"></span>
           <span>即将上映</span>
         </div>
-        <div class="head-size">35部 &gt;</div>
+        <div class="head-size" @click="$router.push('/coming')">35部 &gt;</div>
       </div>
       <div class="list-page">
         <div class="page" v-for="(item, index) in coming" :key="index">
@@ -75,7 +75,7 @@
           <span class="act"></span>
           <span>那年今日</span>
         </div>
-        <div class="head-size">304部 &gt;</div>
+        <div class="head-size" @click="$router.push('/today')">304部 &gt;</div>
       </div>
       <div class="list-page">
         <div class="page" v-for="(item, index) in today" :key="index">
@@ -112,6 +112,11 @@
         </div>
       </div>
     </div>
+
+    <div class="home-info">
+      <img src="https://test-h5.ixook.com/img/logo.3572ff19.png" alt="" />
+      <span>慕影网</span>
+    </div>
   </div>
 </template>
 
@@ -124,6 +129,7 @@ const theater = ref()
 const coming = ref()
 const today = ref()
 const article = ref()
+// 请求
 HomeList({}).then((res) => {
   console.log(res)
   swiper.value = res.data.swiper
@@ -272,5 +278,22 @@ HomeList({}).then((res) => {
   .pag-rig {
     padding-right: 10px;
   }
+}
+.home-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  color: #ccc;
+  img {
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
+    filter: grayscale(100%);
+    opacity: 0.5;
+  }
+}
+::-webkit-scrollbar {
+  display: none;
 }
 </style>

@@ -1,0 +1,30 @@
+export type MoviesType = {
+  data: any
+  id: number
+  rating: string
+  vote_count: number
+  poster: any
+  imdb_id: string
+  douban_id: number
+  title: string
+  title_original: string
+  akas: any
+  category: string
+  genres: string
+  year: number
+  pubdate: string
+  pubdates: any
+  durations: string
+  languages: string
+  countries: string
+  photo_count: number
+  review_count: number
+  season_count: number
+  comment_count: number
+  current_season: null
+  episode_count: number
+  bgcolor: string
+  seen_count: number
+  video_count: number
+  is_thrid_rating: number
+}
